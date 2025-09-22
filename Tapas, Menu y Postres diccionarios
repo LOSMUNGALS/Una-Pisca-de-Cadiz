@@ -1,0 +1,21 @@
+tapas = {"Pinchos de Camaron": 275,
+            "Camarones con Garbanzo": 250,
+            "Tortillitas de Camarones": 215,
+            "Pulpo a la Gallega": 200,
+            "Patata Brava": 310
+            }
+
+
+menu = {"Tortilla de Papas": 250,
+        "Paella": 375,
+        "Gazpacho Andaluz": 300,
+        "Cocido Madrileño": 315,
+        "Paella Valenciana": 395,
+        "Filete de Merluza en Papillote": 500,
+        "Bacalao al Pil Pil": 365
+        }
+
+postres = {"Tiramisu": 450,
+           "Churros con Chocolate": 425,
+           "Brownies con Helado": 300
+           }
