@@ -1,80 +1,62 @@
-tapas = {"Pinchos de Camaron": 275,
-        "Camarones con Garbanzo": 250,
-        "Tortillitas de Camarones": 215,
-        "Pulpo a la Gallega": 200,
-        "Patata Brava": 310
-        }
+tapas = {
+    "Pinchos de Camaron": 275,
+    "Camarones con Garbanzo": 250,
+    "Tortillitas de Camarones": 215,
+    "Pulpo a la Gallega": 200,
+    "Patata Brava": 310
+}
 
+menu = {
+    "Tortilla de Papas": 250,
+    "Paella": 375,
+    "Gazpacho Andaluz": 300,
+    "Cocido Madrileño": 315,
+    "Paella Valenciana": 395,
+    "Filete de Merluza en Papillote": 500,
+    "Bacalao al Pil Pil": 365
+}
 
-menu = {"Tortilla de Papas": 250,
-        "Paella": 375,
-        "Gazpacho Andaluz": 300,
-        "Cocido Madrileño": 315,
-        "Paella Valenciana": 395,
-        "Filete de Merluza en Papillote": 500,
-        "Bacalao al Pil Pil": 365
-        }
-
-postres = {"Tiramisu": 450,
-           "Churros con Chocolate": 425,
-           "Brownies con Helado": 300
-           }
+postres = {
+    "Tiramisu": 450,
+    "Churros con Chocolate": 425,
+    "Brownies con Helado": 300
+}
 
 print("Bienvenidos a Una Pisca de Cadiz, elija su plato.")
+total = 0
 
 while True:
-    sabor = input("Elige un número del 1 al 7 para su plato: ").lower()
-    match sabor:
-        case "Pinchos de Camaron":
-            print("Has elegido los Pinchos de Camaron. ¿Algo más?")
-        case "Camarones con Garbanzo":
-            print("Has elegido los Camarones con Garbanzo. ¿Algo más?")
-        case "Tortillitas de Camarones":
-            print("Has elegido las Tortillitas de Camarones. ¿Algo más?")
-        case "Pulpo a la Gallega":
-            print("Has elegido los Pulpo a la Gallega. ¿Algo más?")
-        case "Patatas Bravas":
-            print("Has elegido los Patatas Bravas. ¿Algo más?")
-        case "Nada mas":
-            print("Ok.")
-            break
+    sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ")
+    if sabor in tapas:
+        total += tapas[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese plato.")
 
-
-    print("Seguimos con los platos principales.")
-
+print("Seguimos con los platos principales.")
 
 while True:
-    sabor = input("Elige un número del 1 al 7 para su plato: ").lower
-    match sabor:
-        case "Tortilla de Patatas":
-            print("Has elegido los Tortilla de Patatas. ¿Algo más?")
-        case "Paella":
-            print("Has elegido los Paella. ¿Algo más?")
-        case "Gazpacho Andaluz":
-            print("Has elegido las Gazpacho Andaluz. ¿Algo más?")
-        case "Cocido Madrileño":
-            print("Has elegido el Cocido Madrileño. ¿Algo más?")
-        case "Paella Valenciana":
-            print("Has elegido la Paella Valenciana. ¿Algo más?")
-        case "Filete de Merluza en Papillote":
-            print("Has elegido el Filete de Merluza en Papillote. ¿Algo más?")
-        case "Bacalao al Pil Pil":
-            print("Has elegido el Bacalao al Pil Pil. ¿Algo más?")
-        case "Nada mas":
-            print("Ok.")
-            break
+    sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ")
+    if sabor in menu:
+        total += menu[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese plato.")
 
-print("Por ultimo, terminamos con los postres.").lower
+print("Por último, terminamos con los postres.")
 
 while True:
-    sabor = input("Elige un número del 1 al 7 para su plato: ")
-    match sabor:
-        case "Tiramisu":
-            print("Has elegido el Tiramisu. ¿Algo más?")
-        case "Churros con Chocolate":
-            print("Has elegido los Churros con Chocolate. ¿Algo más?")
-        case "Brownies con Helado":
-            print("Has elegido los Brownies con Helado. ¿Algo más?")
-        case "Nada mas":
-            print("Ok.")
-            break
+    sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ")
+    if sabor in postres:
+        total += postres[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese postre.")
+
+print(f"Su total es: {total} pesos.")
