@@ -88,3 +88,4 @@ while True:
 impuestos = total * n1
 
 print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
+print(f"Que tenga un bonito día señor/a {nombre} y gracias por confiar en nosotros!")
