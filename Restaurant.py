@@ -5,16 +5,18 @@ while True:
     if reserva == "si":
         nombre = str(input("¿Cuál es el nombre con el que está registrada la reserva?: "))
         print(f"Bienvenido/a {nombre}, acompañeme a su mesa resevada.")
+        break
     elif reserva == "no":
         while True:
             mesa = int(input("afortunadamente tenemos mesas disponibles, que mesa le gustaría, tenemos de la mesa 1 a la 20: "))
             if mesa in mesas_ya_reeservadas:
                 print("Lo siento esa mesa ya esta ocupada o reservada, escoja otra por favor")
             elif mesa > 20 or mesa < 1:
-                print("Invalid number, try again")
+                print("no tenemos ese numero de mesas, vuelva a intentar")
             else:
-                print(f"Ok, let me take you to your table")
+                print(f"Ok, dejame llevarte a tu mesa")
                 break
         break
     else:
-        print("please answer me with a yes or a no")
+        print("por favor responde si o no")
+print(f"Que tenga un buen día señor/a {nombre}")
