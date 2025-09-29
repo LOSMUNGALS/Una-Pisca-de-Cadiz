@@ -1,3 +1,5 @@
+n1 = 1.28
+
 tapas = {
     "pinchos de camaron": 275,
     "camarones con garbanzo": 250,
@@ -60,4 +62,6 @@ while True:
     else:
         print("No tenemos ese postre.")
 
-print(f"Su total es: {total} pesos.")
+impuestos = total * n1
+
+print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
