@@ -26,7 +26,7 @@ print("Bienvenidos a Una Pisca de Cadiz, elija su plato.")
 total = 0
 
 while True:
-    sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ")
+    sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in tapas:
         total += tapas[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
@@ -38,7 +38,7 @@ while True:
 print("Seguimos con los platos principales.")
 
 while True:
-    sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ")
+    sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in menu:
         total += menu[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
@@ -50,7 +50,7 @@ while True:
 print("Por último, terminamos con los postres.")
 
 while True:
-    sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ")
+    sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in postres:
         total += postres[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
