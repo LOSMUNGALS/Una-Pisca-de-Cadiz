@@ -61,7 +61,7 @@ while True:
         break
     else:
         print("No tenemos ese postre.")
-
+impuestostotal = n1
 impuestos = total * n1
 
-print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
+print(f"Su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITBIS en pesos es {impuestostotal}")
