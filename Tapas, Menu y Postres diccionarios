@@ -1,26 +1,27 @@
 tapas = {
-    "Pinchos de Camaron": 275,
-    "Camarones con Garbanzo": 250,
-    "Tortillitas de Camarones": 215,
-    "Pulpo a la Gallega": 200,
-    "Patata Brava": 310
+    "pinchos de camaron": 275,
+    "camarones con garbanzo": 250,
+    "tortillitas de camarones": 215,
+    "pulpo a la gallega": 200,
+    "patata brava": 310
 }
 
 menu = {
-    "Tortilla de Papas": 250,
-    "Paella": 375,
-    "Gazpacho Andaluz": 300,
-    "Cocido Madrileño": 315,
-    "Paella Valenciana": 395,
-    "Filete de Merluza en Papillote": 500,
-    "Bacalao al Pil Pil": 365
+    "tortilla de papas": 250,
+    "paella": 375,
+    "gazpacho andaluz": 300,
+    "cocido madrileño": 315,
+    "paella valenciana": 395,
+    "filete de merluza en papillote": 500,
+    "bacalao al pil pil": 365
 }
 
 postres = {
-    "Tiramisu": 450,
-    "Churros con Chocolate": 425,
-    "Brownies con Helado": 300
+    "tiramisu": 450,
+    "churros con chocolate": 425,
+    "brownies con helado": 300
 }
+
 
 print("Bienvenidos a Una Pisca de Cadiz, elija su plato.")
 total = 0
