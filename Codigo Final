@@ -1,4 +1,4 @@
-n1 = 1.28
+n1 = 1.18
 
 tapas = {
     "pinchos de camaron": 275,
@@ -42,10 +42,11 @@ while True:
             else:
                 print(f"Ok, dejame llevarte a tu mesa")
                 break
+        nombre = str(input("¿Cuál es su nombre?: "))
+        print(f"Bienvenido/a {nombre}, acompáñeme a su mesa.")
         break
     else:
         print("por favor responde si o no")
-print(f"Que tenga un buen día señor/a {nombre}")
 
 print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su plato.")
 total = 0
@@ -87,4 +88,3 @@ while True:
 impuestos = total * n1
 
 print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
-
