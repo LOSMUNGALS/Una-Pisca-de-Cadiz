@@ -1,5 +1,5 @@
 n1 = 1.18
-
+n2 = 0.18
 tapas = {
     "pinchos de camaron": 275,
     "camarones con garbanzo": 250,
@@ -24,7 +24,7 @@ postres = {
     "brownies con helado": 300
 }
 
-print("Bienvenido a el restaurante Un Rincón de Cádiz,")
+print("Bienvenido a el restaurante Un Rincón de Cádiz")
 while True:
     reserva = str(input("¿Tienes reserva, si o no?: ")).lower()
     mesas_ya_reeservadas = [3,6,7,15,18]
@@ -34,24 +34,25 @@ while True:
         break
     elif reserva == "no":
         while True:
-            mesa = int(input("afortunadamente tenemos mesas disponibles, que mesa le gustaría, tenemos de la mesa 1 a la 20: "))
+            mesa = int(input("Afortunadamente tenemos mesas disponibles, que mesa le gustaría, tenemos de la mesa 1 a la 20: "))
             if mesa in mesas_ya_reeservadas:
                 print("Lo siento esa mesa ya esta ocupada o reservada, escoja otra por favor")
             elif mesa > 20 or mesa < 1:
                 print("no tenemos ese numero de mesas, vuelva a intentar")
             else:
-                print(f"Ok, dejame llevarte a tu mesa")
+                print("Ok, dejame llevarte a tu mesa")
                 break
         nombre = str(input("¿Cuál es su nombre?: "))
         print(f"Bienvenido/a {nombre}, acompáñeme a su mesa.")
         break
     else:
-        print("por favor responde si o no")
+        print("Por favor responde si o no.")
 
-print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su plato.")
+print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su tapa.")
 total = 0
 
 while True:
+    print(tapas)
     sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in tapas:
         total += tapas[sabor]
@@ -64,6 +65,7 @@ while True:
 print("Seguimos con los platos principales.")
 
 while True:
+    print(menu)
     sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in menu:
         total += menu[sabor]
@@ -76,6 +78,7 @@ while True:
 print("Por último, terminamos con los postres.")
 
 while True:
+    print(postres)
     sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in postres:
         total += postres[sabor]
@@ -85,7 +88,8 @@ while True:
     else:
         print("No tenemos ese postre.")
 
+impuestostotal = n2 * total
 impuestos = total * n1
-
-print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
-print(f"Que tenga un bonito día señor/a {nombre} y gracias por confiar en nosotros!")
+ 
+print(f"Su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITEBIS en pesos es {impuestostotal}")
+print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.") nombre} y gracias por confiar en nosotros!")
