@@ -1,0 +1,67 @@
+n1 = 1.28
+
+tapas = {
+    "pinchos de camaron": 275,
+    "camarones con garbanzo": 250,
+    "tortillitas de camarones": 215,
+    "pulpo a la gallega": 200,
+    "patata brava": 310
+}
+
+menu = {
+    "tortilla de papas": 250,
+    "paella": 375,
+    "gazpacho andaluz": 300,
+    "cocido madrileño": 315,
+    "paella valenciana": 395,
+    "filete de merluza en papillote": 500,
+    "bacalao al pil pil": 365
+}
+
+postres = {
+    "tiramisu": 450,
+    "churros con chocolate": 425,
+    "brownies con helado": 300
+}
+
+
+print("Bienvenidos a Una Pisca de Cadiz, elija su plato.")
+total = 0
+
+while True:
+    sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ").lower()
+    if sabor in tapas:
+        total += tapas[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese plato.")
+
+print("Seguimos con los platos principales.")
+
+while True:
+    sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ").lower()
+    if sabor in menu:
+        total += menu[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese plato.")
+
+print("Por último, terminamos con los postres.")
+
+while True:
+    sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ").lower()
+    if sabor in postres:
+        total += postres[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos ese postre.")
+
+impuestos = total * n1
+
+print(f"Su total es: {total} pesos, con impuestos es {impuestos}.")
