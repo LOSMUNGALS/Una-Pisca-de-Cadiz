@@ -91,5 +91,11 @@ while True:
 impuestostotal = n2 * total
 impuestos = total * n1
  
-print(f"Su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITEBIS en pesos es {impuestostotal}")
-print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.") nombre} y gracias por confiar en nosotros!")
+print(f"Su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITBIS en pesos es {impuestostotal}")
+tip = int(input("Quisiera añadir un tip (ponga cualquier otra cosa si no quiere poner un tip)? "))
+if tip > 0:
+    totaltip = tip + total
+    totaltipimp = tip + impuestos
+
+    print(f"Okay, su nuevo total es: {totaltip} pesos, con impuestos es {totaltipimp}. Tambien, el 18% de ITBIS en pesos es {impuestostotal}")
+    print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre} y gracias por confiar en nosotros!")
