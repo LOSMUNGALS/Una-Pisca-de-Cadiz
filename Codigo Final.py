@@ -1,17 +1,5 @@
 n1 = 1.18
 n2 = 0.18
-
-bebidas = {
-    "agua": 50,
-    "jugo de fresa": 100,
-    "jugo de limon": 100,
-    "jugo de chinola": 100,
-    "agua con gas": 75,
-    "coca cola": 90,
-    "sprite": 90,
-}
-
-
 tapas = {
     "pinchos de camaron": 275,
     "camarones con garbanzo": 250,
@@ -36,6 +24,29 @@ postres = {
     "brownies con helado": 300
 }
 
+descripcióntapas = {
+    "pinchos de camaron?": "Brochetas com camarones y vegetales como pimentón y cebolla",
+    "camarones con garbanzo?": "Asopado de garbanzos con vegetales y camarones, la salsa es de tomate",
+    "tortillitas de camarones?": "Son tortillas que están hechas con harina de trigo y trozos de camarones, son crocantes",
+    "pulpo a la gallega?": "Es una preparación de trosos de pulpo con papa sazonados con especias",
+    "patata brava?": "Son papas con salsa de tomate arriba y sazonadas con orégano"
+}
+
+descripciónmenu = {
+    "tortilla de papas?": "Una torilla hecha de harina de trigo, con papas y queso en el interior",
+    "paella?": "Arroz sazonado con especias que tiene maricos y pescados",
+    "gazpacho andaluz?": "Una sopa fría de tomate con vegetales en su interior",
+    "cocido madrileño?": "Un asopado de mariscos con chicharrón y chorizo en su interior",
+    "paella valenciana?": "Un arroz con maricos y pescados, pero con más vegetales que la paella normal",
+    "filete de merluza en papillote?": "Un pedaso de un pescado llamado merluza que viene con vegetales alrededor",
+    "bacalao al pil pil?": "Bacalao bañado en salsa de ajo, con tomates y champiñones alrededor"
+}
+
+descripciónpostres = {
+    "tiramisu?": "Un tipo de pastel con café, crema, chocolate y vino evaporado",
+    "churros con chocolate?": "Un set de chorros con chocolate aparte que pueden ser mojados en el",
+    "brownies con helado?": "Un pedazo de brownie con un helado de vainilla por encima"
+}
 print("Bienvenido a el restaurante Un Rincón de Cádiz")
 while True:
     reserva = str(input("¿Tienes reserva, si o no?: ")).lower()
@@ -60,21 +71,8 @@ while True:
     else:
         print("Por favor responde si o no.")
 
-print("Ahora, bienvenidos a Una Pisca de Cadiz, empezamos con las bebidas.")
+print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su tapa.")
 total = 0
-
-while True:
-    print(bebidas)
-    sabor = input("Elige una bebida (o escriba 'Nada mas' para terminar): ").lower()
-    if sabor in bebidas:
-        total += bebidas[sabor]
-        print(f"Has elegido {sabor}. ¿Algo más?")
-    elif sabor.lower() == "nada mas":
-        break
-    else:
-        print("No tenemos esa bebida.")
-
-print("Seguimos con las tapas.")
 
 while True:
     print(tapas)
@@ -82,6 +80,8 @@ while True:
     if sabor in tapas:
         total += tapas[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor in descripcióntapas:
+        print(descripcióntapas[sabor])
     elif sabor.lower() == "nada mas":
         break
     else:
@@ -95,6 +95,8 @@ while True:
     if sabor in menu:
         total += menu[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor in descripciónmenu:
+        print(descripciónmenu[sabor])
     elif sabor.lower() == "nada mas":
         break
     else:
@@ -108,6 +110,8 @@ while True:
     if sabor in postres:
         total += postres[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor in descripciónpostres:
+        print(descripciónpostres[sabor])
     elif sabor.lower() == "nada mas":
         break
     else:
