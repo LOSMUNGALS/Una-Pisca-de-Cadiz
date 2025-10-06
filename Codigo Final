@@ -1,5 +1,17 @@
 n1 = 1.18
 n2 = 0.18
+
+bebidas = {
+    "agua": 50,
+    "jugo de fresa": 100,
+    "jugo de limon": 100,
+    "jugo de chinola": 100,
+    "agua con gas": 75,
+    "coca cola": 90,
+    "sprite": 90,
+}
+
+
 tapas = {
     "pinchos de camaron": 275,
     "camarones con garbanzo": 250,
@@ -48,8 +60,21 @@ while True:
     else:
         print("Por favor responde si o no.")
 
-print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su tapa.")
+print("Ahora, bienvenidos a Una Pisca de Cadiz, empezamos con las bebidas.")
 total = 0
+
+while True:
+    print(bebidas)
+    sabor = input("Elige una bebida (o escriba 'Nada mas' para terminar): ").lower()
+    if sabor in bebidas:
+        total += bebidas[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos esa bebida.")
+
+print("Seguimos con las tapas.")
 
 while True:
     print(tapas)
