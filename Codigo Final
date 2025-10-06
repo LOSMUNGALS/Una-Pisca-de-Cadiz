@@ -100,7 +100,8 @@ if tip > 0:
     print(f"Okay, su nuevo total es: {totaltip} pesos, con impuestos es {totaltipimp}. Tambien, el 18% de ITBIS en pesos es {impuestostotal}")
     print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre} y gracias por confiar en nosotros!")
 
- cardorcash = input("Vas a pagar con tarjeta o efectivo?: ").lower()
+while True:
+    cardorcash = input("Vas a pagar con tarjeta o efectivo?: ").lower()
     if cardorcash == "tarjeta":
         balance = int(input("Ok, que balance tiene tu tarjeta?: "))
         if balance >= impuestos:
