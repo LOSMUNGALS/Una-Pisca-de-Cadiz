@@ -118,6 +118,7 @@ while True:
             print(f"Lo siento, aun le faltan {cambio*-1} por pagar")
         elif cambio == 0:
             print("Perfecto, no hay cambio")
+            break
         elif cambio >= 0:
             print(f"Su cambio sería de {cambio}")
             billetes = [2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
@@ -126,7 +127,6 @@ while True:
                 if cantidadbillete > 0:
                     print(f"{cantidadbillete} x {i}")
                     cambio %= i
-        break
+            break
     else:
         print("Solo tenemos tarjeta y efectivo")
-print("Gracias por comer en Una Pisca de Cádiz, que tenga un buen día")
