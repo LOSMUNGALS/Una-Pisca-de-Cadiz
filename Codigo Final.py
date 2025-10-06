@@ -1,5 +1,16 @@
 n1 = 1.18
 n2 = 0.18
+
+bebidas = {
+    "agua": 50,
+    "jugo de fresa": 100,
+    "jugo de limon": 100,
+    "jugo de chinola": 100,
+    "agua con gas": 75,
+    "coca cola": 90,
+    "sprite": 90,
+}
+
 tapas = {
     "pinchos de camaron": 275,
     "camarones con garbanzo": 250,
@@ -23,6 +34,16 @@ postres = {
     "churros con chocolate": 425,
     "brownies con helado": 300
 }
+
+descripcionbebidas = {
+    "agua?": "buddy it's water -_-",
+    "jugo de fresa?": "Jugo de fresa hechos de nuestras deliciosas fresas crecidas en nuestro campo.",
+    "jugo de limon?": "Jugo de limon hechos de los limones más jugosos y dulces.",
+    "jugo de chinola?": "Jugo de chinola hecho de las chinolas más frescas y maduras.",
+    "agua con gas?": "agua + gas = agua con gas.",
+    "coca cola?": "es un refresco dulce y con ligeero sabor a jarabe.",
+    "sprite?": "refresco dulce con sabor a limón.",
+
 
 descripcióntapas = {
     "pinchos de camaron?": "Brochetas com camarones y vegetales como pimentón y cebolla",
@@ -71,8 +92,21 @@ while True:
     else:
         print("Por favor responde si o no.")
 
-print("Ahora, bienvenidos a Una Pisca de Cadiz, elija su tapa.")
+print("Ahora, bienvenidos a Una Pisca de Cadiz, empezamos con las bebidas.")
 total = 0
+
+while True:
+    print(bebidas)
+    sabor = input("Elige una bebida (o escriba 'Nada mas' para terminar): ").lower()
+    if sabor in bebidas:
+        total += bebidas[sabor]
+        print(f"Has elegido {sabor}. ¿Algo más?")
+    elif sabor in descripcionbebidas:
+        print(descripcionbebidas[sabor]
+    elif sabor.lower() == "nada mas":
+        break
+    else:
+        print("No tenemos esa bebida.")
 
 while True:
     print(tapas)
@@ -120,16 +154,16 @@ while True:
 impuestostotal = n2 * total
 impuestos = total * n1
  
-print(f"Su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITBIS en pesos es {impuestostotal}")
+print(f"Su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
 tip = int(input("Si desea dar una propina, ingrese el monto de propina (si no quiere poner tip, ponga no)? "))
 while True:
     if tip == "no":
-        print(f"Okay, su total es: {total} pesos, con impuestos es {impuestos}. También, el 18% de ITBIS en pesos es {impuestostotal}")
+        print(f"Okay, su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
         break
     elif tip > 0:
         totaltip = tip + total
         totaltipimp = tip + impuestos
-        print(f"Okay, su nuevo total es: {totaltip} pesos, con impuestos es {totaltipimp}. Tambien, el 18% de ITBIS en pesos es {impuestostotal}")
+        print(f"Okay, su nuevo total es: {float(totaltip)} pesos, con impuestos es {float(totaltipimp)}. Tambien, el 18% de ITBIS en pesos es {float(impuestostotal)}")
         break
 
 while True:
@@ -141,23 +175,31 @@ while True:
             print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.") 
             break
         elif balance < impuestos:
-            print("Tu tarjeta no tiene lo suficiente")
+            print("Tu tarjeta no tiene suficiente balance")
             decision2 = input("Desearia pagar en efectivo?: ").lower()
+        elif balance >= totaltipimp:
+            print("La tarjeta paso perfectamente.")
+            print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.") 
+            break
+        elif balance < totaltipimp:
+            print("La tarjeta no tiene suficiente balance.")
+            decision2 = input("Desearia pagar en efectivo?: ").lower()
+            break
     elif cardorcash == "efectivo":
         cantidadefectivo = int(input("Solo para saber cuanto sería el cambio, ¿con cuanto efectivo a va a pagar?, por favor no ponga la palabra pesos, solo la cantidad: "))
         cambio = cantidadefectivo-totaltipimp
         if cambio < 0:
-            print(f"Lo siento, aun le faltan {cambio*-1} por pagar")
+            print(f"Lo siento, aun le faltan {float(cambio*-1)} por pagar")
         elif cambio == 0:
             print("Perfecto, no hay cambio")
             break
         elif cambio >= 0:
-            print(f"Su cambio sería de {cambio}")
+            print(f"Su cambio sería de {float(cambio)}")
             billetes = [2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
             for i in billetes:
                 cantidadbillete = cambio//i
                 if cantidadbillete > 0:
-                    print(f"{cantidadbillete} x {i}")
+                    print(f"{float(cantidadbillete)} x {i}")
                     cambio %= i
             break
     else:
