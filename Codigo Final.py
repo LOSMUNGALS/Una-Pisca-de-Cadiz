@@ -155,14 +155,14 @@ impuestostotal = n2 * total
 impuestos = total * n1
  
 print(f"Su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
-tip = int(input("Si desea dar una propina, ingrese el monto de propina (si no quiere poner tip, ponga no)? "))
+tip = input("Si desea dar una propina, ingrese el monto de propina (si no quiere poner tip, ponga no)")
 while True:
     if tip == "no":
         print(f"Okay, su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
         break
-    elif tip > 0:
-        totaltip = tip + total
-        totaltipimp = tip + impuestos
+    elif int(tip) > 0:
+        totaltip = int(tip) + total
+        totaltipimp = int(tip) + impuestos
         print(f"Okay, su nuevo total es: {float(totaltip)} pesos, con impuestos es {float(totaltipimp)}. Tambien, el 18% de ITBIS en pesos es {float(impuestostotal)}")
         break
 
