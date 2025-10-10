@@ -43,6 +43,7 @@ descripcionbebidas = {
     "agua con gas?": "agua + gas = agua con gas.",
     "coca cola?": "es un refresco dulce y con ligeero sabor a jarabe.",
     "sprite?": "refresco dulce con sabor a limón.",
+}
 
 
 descripcióntapas = {
@@ -102,7 +103,7 @@ while True:
         total += bebidas[sabor]
         print(f"Has elegido {sabor}. ¿Algo más?")
     elif sabor in descripcionbebidas:
-        print(descripcionbebidas[sabor]
+        print(descripcionbebidas[sabor])
     elif sabor.lower() == "nada mas":
         break
     else:
@@ -201,6 +202,7 @@ while True:
                 if cantidadbillete > 0:
                     print(f"{float(cantidadbillete)} x {i}")
                     cambio %= i
+                print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.")  
             break
     else:
         print("Solo tenemos tarjeta y efectivo")
