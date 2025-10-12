@@ -45,7 +45,6 @@ descripcionbebidas = {
     "sprite?": "refresco dulce con sabor a limón.",
 }
 
-
 descripcióntapas = {
     "pinchos de camaron?": "Brochetas com camarones y vegetales como pimentón y cebolla",
     "camarones con garbanzo?": "Asopado de garbanzos con vegetales y camarones, la salsa es de tomate",
@@ -69,6 +68,7 @@ descripciónpostres = {
     "churros con chocolate?": "Un set de chorros con chocolate aparte que pueden ser mojados en el",
     "brownies con helado?": "Un pedazo de brownie con un helado de vainilla por encima"
 }
+
 print("Bienvenido a el restaurante Un Rincón de Cádiz")
 while True:
     reserva = str(input("¿Tienes reserva, si o no?: ")).lower()
@@ -95,12 +95,14 @@ while True:
 
 print("Ahora, bienvenidos a Una Pisca de Cadiz, empezamos con las bebidas.")
 total = 0
+pedidos = []
 
 while True:
     print(bebidas)
     sabor = input("Elige una bebida (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in bebidas:
         total += bebidas[sabor]
+        pedidos.append(sabor)
         print(f"Has elegido {sabor}. ¿Algo más?")
     elif sabor in descripcionbebidas:
         print(descripcionbebidas[sabor])
@@ -114,6 +116,7 @@ while True:
     sabor = input("Elige una tapa (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in tapas:
         total += tapas[sabor]
+        pedidos.append(sabor)
         print(f"Has elegido {sabor}. ¿Algo más?")
     elif sabor in descripcióntapas:
         print(descripcióntapas[sabor])
@@ -129,6 +132,7 @@ while True:
     sabor = input("Elige un plato principal (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in menu:
         total += menu[sabor]
+        pedidos.append(sabor)
         print(f"Has elegido {sabor}. ¿Algo más?")
     elif sabor in descripciónmenu:
         print(descripciónmenu[sabor])
@@ -144,6 +148,7 @@ while True:
     sabor = input("Elige un postre (o escriba 'Nada mas' para terminar): ").lower()
     if sabor in postres:
         total += postres[sabor]
+        pedidos.append(sabor)
         print(f"Has elegido {sabor}. ¿Algo más?")
     elif sabor in descripciónpostres:
         print(descripciónpostres[sabor])
@@ -156,7 +161,7 @@ impuestostotal = n2 * total
 impuestos = total * n1
  
 print(f"Su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
-tip = input("Si desea dar una propina, ingrese el monto de propina (si no quiere poner tip, ponga no)")
+tip = input("Si desea dar una propina, ingrese el monto de propina (si no quiere poner tip, ponga no): ")
 while True:
     if tip == "no":
         print(f"Okay, su total es: {float(total)} pesos, con impuestos es {float(impuestos)}. También, el 18% de ITBIS en pesos es {float(impuestostotal)}")
@@ -206,3 +211,24 @@ while True:
             break
     else:
         print("Solo tenemos tarjeta y efectivo")
+
+print("Resumen de tu orden:")
+print("---------------------")
+print("Comidas y bebidas que pidió:")
+
+for p in pedidos:
+    print("-", p)
+
+print("---------------------")
+print("Total sin impuestos:", total, "pesos")
+print("Total con impuestos:", impuestos, "pesos")
+print("ITBIS (18%):", impuestostotal, "pesos")
+
+if tip == "no":
+    print("Total final:", impuestos, "pesos")
+else:
+    print("Propina:", tip, "pesos")
+    print("Total final:", totaltipimp, "pesos")
+
+print("---------------------")
+print(f"Gracias por visitar Un Rincón de Cádiz, {nombre}")
