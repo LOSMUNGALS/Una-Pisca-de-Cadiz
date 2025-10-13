@@ -207,7 +207,6 @@ while True:
                 if cantidadbillete > 0:
                     print(f"{float(cantidadbillete)} x {i}")
                     cambio %= i
-                print(f"Que tenga buen dia y esperamos volverlo a ver, {nombre}.")  
             break
     else:
         print("Solo tenemos tarjeta y efectivo")
